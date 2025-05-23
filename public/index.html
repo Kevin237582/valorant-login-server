@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>ValServer.GG</title>
+  <style>
+    body { font-family: sans-serif; background: #1a1a1d; color: white; margin: 0; }
+    header { background: #c3073f; padding: 20px; text-align: center; position: relative; }
+    #login-status { position: absolute; top: 20px; right: 20px; }
+    nav { background: #6f2232; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    .container { padding: 20px; max-width: 800px; margin: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ValServer.GG</h1>
+    <div id="login-status"><a href="/login.html" style="color:white;">로그인</a></div>
+  </header>
+  <nav>
+    <a href="#about">코치 소개</a>
+    <a href="#students">수강생</a>
+  </nav>
+  <div class="container">
+    <section id="about"><h2>코치 소개</h2><p>감성은준입니다.</p></section>
+    <section id="students"><h2>수강생 목록</h2><p>곧 업데이트!</p></section>
+  </div>
+  <script>
+    fetch('/auth/status').then(res => res.json()).then(data => {
+      if (data.loggedIn) {
+        document.getElementById('login-status').innerHTML = `<span>환영합니다, ${data.username}님</span>`;
+      }
+    });
+  </script>
+</body>
+</html>
