@@ -29,4 +29,10 @@ router.get('/status', (req, res) => {
   res.json({ loggedIn: false });
 });
 
+router.post('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.send("로그아웃 완료");
+  });
+});
+
 module.exports = router;
