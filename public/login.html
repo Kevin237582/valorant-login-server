@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>로그인</title>
-</head>
+<head><meta charset="UTF-8"><title>로그인</title></head>
 <body style="background:#1a1a1d; color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
   <form id="loginForm" style="background:#333; padding:20px; border-radius:8px;">
     <h2>로그인</h2>
@@ -17,23 +14,16 @@
     const msg = document.getElementById('message');
     form.addEventListener('submit', async e => {
       e.preventDefault();
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
+      const data = Object.fromEntries(new FormData(form));
       const res = await fetch('/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
       const text = await res.text();
-      if (res.ok) {
-        msg.textContent = "✅ " + text;
-        location.href = '/';
-      } else {
-        msg.textContent = "❌ " + text;
-      }
+      if (res.ok) { msg.textContent = "✅ " + text; location.href = '/'; }
+      else msg.textContent = "❌ " + text;
     });
   </script>
 </body>
-  <a href="/signup.html" style="color:white;">회원가입</a>
-
 </html>
