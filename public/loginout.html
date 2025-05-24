@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta charset="UTF-8"><title>로그아웃</title></head>
+<body style="background:#1a1a1d; color:white; display:flex; align-items:center; justify-content:center; height:100vh;">
+  <h2>로그아웃 중...</h2>
+  <script>
+    fetch('/auth/logout', { method: 'POST' }).then(() => {
+      setTimeout(() => location.href = '/', 1000);
+    });
+  </script>
+</body>
+</html>
