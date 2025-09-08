@@ -10,6 +10,7 @@
     nav { background: #6f2232; padding: 10px; text-align: center; }
     nav a { color: white; margin: 0 10px; text-decoration: none; }
     .container { padding: 20px; max-width: 800px; margin: auto; }
+    section { margin-top: 30px; }
   </style>
 </head>
 <body>
@@ -17,24 +18,44 @@
     <h1>GSEJ Company</h1>
     <div id="login-status"><a href="/login.html" style="color:white;">로그인</a></div>
   </header>
+
   <nav>
     <a href="/signup.html">회원가입</a>
     <a href="#about">GSEJ DEV Introduce</a>
     <a href="#students">Contect and Join us!</a>
+    <a href="/regal.html">정책 안내</a> <!-- 정책 탭 추가 -->
   </nav>
+
   <div class="container">
-    <section id="about"><h2>GSEJ DEV Instroduce</h2><p>안녕하세요 감성은준 컴퍼니 입니다. 감성은준 컴퍼니는 1인 학생이 운영하는 곳으로 코딩에 관심이 있으신 분들은 저희와 협력 가능하십니다. 저희는 Game , Bot 등 가릴것 없이 만들고 , 또 만듭니다. Make with us!</p></section>
-    <section id="students"><h2>Contect and Join Us!</h2><p>저희와 함께 코딩에 세계로 가실분은 디스코드 eunddiseundd#0으로 연락주세요.</p></section>
+    <section id="about">
+      <h2>GSEJ DEV Introduce</h2>
+      <p>
+        안녕하세요, 감성은준 컴퍼니 입니다.  
+        저희 회사는 1인 학생이 운영하는 곳으로 코딩에 관심 있으신 분들과 협력 가능합니다.  
+        Game, Bot 등 다양한 프로젝트를 만들고 운영합니다. Make with us!
+      </p>
+    </section>
+
+    <section id="students">
+      <h2>Contect and Join Us!</h2>
+      <p>
+        저희와 함께 코딩 세계로 가고 싶으신 분은 디스코드 <strong>eunddiseundd#0</strong>으로 연락주세요.
+      </p>
+    </section>
   </div>
+
   <script>
-    fetch('/auth/status').then(res => res.json()).then(data => {
-      if (data.loggedIn) {
-        document.getElementById('login-status').innerHTML = `
-          <span>환영합니다, ${data.username}님</span>
-          <a href="/logout.html" style="color:white; margin-left:10px;">로그아웃</a>
-        `;
-      }
-    });
+    // 로그인 상태 표시
+    fetch('/auth/status')
+      .then(res => res.json())
+      .then(data => {
+        if (data.loggedIn) {
+          document.getElementById('login-status').innerHTML = `
+            <span>환영합니다, ${data.username}님</span>
+            <a href="/logout.html" style="color:white; margin-left:10px;">로그아웃</a>
+          `;
+        }
+      });
   </script>
 </body>
 </html>
