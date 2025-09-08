@@ -1,7 +1,7 @@
 {
-  "name": "valorant-login-server",
+  "name": "GSEJ Company",
   "version": "1.0.0",
-  "description": "발로란트 수강생 관리 서버",
+  "description": "GSEJ Company 회사 서버",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
