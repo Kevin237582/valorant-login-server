@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>따까리봇 개발자용 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+        color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        text-align: center;
+        padding: 60px 20px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-bottom: 2px solid #ff6b6b;
+    }
+    header h1 {
+        font-size: 2.8rem;
+        margin: 0;
+        color: #ff6b6b;
+    }
+    main {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 40px;
+        background-color: rgba(20, 20, 20, 0.85);
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    }
+    h2 {
+        color: #ffd93d;
+        margin-top: 40px;
+        border-bottom: 1px solid #ffd93d;
+        padding-bottom: 5px;
+    }
+    p, li {
+        line-height: 1.7;
+        font-size: 1.1rem;
+    }
+    ul {
+        padding-left: 20px;
+    }
+    code {
+        display: block;
+        background-color: #1a1a1a;
+        padding: 10px 15px;
+        margin: 15px 0;
+        border-left: 4px solid #ff6b6b;
+        border-radius: 5px;
+        font-family: 'Courier New', monospace;
+    }
+    .button-container {
+        text-align: center;
+        margin: 30px 0;
+    }
+    a.guide-button {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #ff6b6b;
+        color: #fff;
+        font-weight: bold;
+        padding: 18px 35px;
+        border-radius: 12px;
+        font-size: 1.3rem;
+        transition: 0.3s;
+    }
+    a.guide-button:hover {
+        background-color: #ff4757;
+    }
+    .status-box, .tip-box, .faq-box {
+        background-color: rgba(40, 40, 40, 0.9);
+        border-left: 5px solid #ffd93d;
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+    }
+    .status-box h3, .tip-box h3, .faq-box h3 {
+        margin-top: 0;
+        color: #ff6b6b;
+    }
+    footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+        color: #bbb;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>🚀 따까리봇 개발자용 가이드</h1>
+</header>
+<main>
+    <h2>소개</h2>
+    <p>이 페이지는 따까리봇을 서버에 추가한 개발자/제작자를 위한 안내서입니다. 각 명령어 사용법과 설정 방법, 그리고 봇 관리 팁을 포함하고 있습니다.</p>
+
+    <div class="status-box">
+        <h3>봇 상태</h3>
+        <p>현재 서버 수: <strong>3</strong></p>
+        <p>등록된 명령어 수: <strong>12</strong></p>
+    </div>
+
+    <h2>주요 기능</h2>
+    <ul>
+        <li>서버 초기 설정 및 권한 확인</li>
+        <li>개발자 전용 명령어 사용</li>
+        <li>로그 확인 및 데이터 조회 방법</li>
+        <li>봇 패치 및 업데이트 안내</li>
+    </ul>
+
+    <h2>예제 명령어</h2>
+    <p>봇을 테스트할 때 사용할 수 있는 명령어 예시:</p>
+    <code>/userinfo @사용자</code>
+    <code>/announce 제목 내용</code>
+    <code>/schedule create 이벤트명 날짜</code>
+
+    <div class="tip-box">
+        <h3>💡 개발자 팁</h3>
+        <ul>
+            <li>봇 권한 설정 시 <strong>관리자 권한</strong> 확인을 필수로 진행하세요.</li>
+            <li>슬래시 명령어 변경 후에는 항상 <strong>동기화(sync)</strong>를 확인하세요.</li>
+            <li>개발 중 테스트 서버를 따로 만들어 실제 서버와 분리하는 것을 추천합니다.</li>
+        </ul>
+    </div>
+
+    <div class="faq-box">
+        <h3>❓ FAQ</h3>
+        <ul>
+            <li>Q: 봇이 명령어를 인식하지 못할 때?<br>A: 권한, Intents, Cog 로딩 순서를 확인하세요.</li>
+            <li>Q: 글로벌 동기화와 길드 동기화 차이?<br>A: 글로벌은 모든 서버 적용, 길드 동기화는 특정 서버에서 테스트용입니다.</li>
+        </ul>
+</main>
+<footer>
+    &copy; 2025 GSEJ. All rights reserved.
+</footer>
+</body>
+</html>
